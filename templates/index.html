@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Based Info Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Hunter</h1>
+            <p>Get insights on domains and IPs</p>
+        </header>
+        <form id="infoForm">
+            <input type="text" id="inputField" placeholder="Enter domain or IP" required>
+            <select id="infoType">
+                <option value="whois">WHOIS</option>
+                <option value="openports">Open Ports Scanning</option>
+                <option value="subdomains">Subdomains Enumeration</option>
+                <option value="technology">Technology Lookup</option>
+                <option value="dnslookup">DNS Lookup</option>
+                <option value="emailhunting">Email Hunting</option>
+                <option value="robots_sitemap">Robots.txt and Sitemap.xml Checker</option>
+                <option value="sslcheck">SSL/TLS Configuration Checker</option>
+            </select>
+            <button type="submit">Get Info</button>
+        </form>
+
+
+        <div id="loading">
+            <div class="spinner"></div>
+        </div>
+        
+        
+        <div id="results">
+            <pre id="formattedResults"></pre>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

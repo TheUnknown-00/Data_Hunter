@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #6a11cb;
+}
+
+p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], select {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #2575fc;
+    transform: translateY(-2px);
+}
+
+#results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #6a11cb;
+    color: #333;
+    overflow: auto; /* Enable scrolling if content is too long */
+    max-height: 300px; /* Set a maximum height for the results box */
+}
+
+#results p {
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+}
+
+
+/* General styles for the results section */
+
+#results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    border: 1px solid #6a11cb;
+    color: #333;
+}
+
+.error {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Table styling for structured results */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.result-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.result-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.key-cell {
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: #6a11cb;
+    color: #fff;
+    text-align: left;
+}
+
+.value-cell {
+    text-align: left;
+}
+
+/* Nested object styling */
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+
+#loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
